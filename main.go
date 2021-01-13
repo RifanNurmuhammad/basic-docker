@@ -14,14 +14,14 @@ func init() {
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatal("Error loading .env files")
 	}
 }
 func main() {
 	name := os.Getenv("FIRST_NAME")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var lastName string = "sipatoha"
-		fmt.Fprintf(w, "hello world %s %s! \n", name, lastName)
+		fmt.Fprintf(w, "hai world %s %s! \n", name, lastName)
 	})
 	http.ListenAndServe(":8095", nil)
 }
